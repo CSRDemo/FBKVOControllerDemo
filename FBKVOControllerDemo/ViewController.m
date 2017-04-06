@@ -7,11 +7,13 @@
 //
 
 #import "ViewController.h"
-
+@import KVOController;
 
 @interface ViewController ()
-@property (strong, nonatomic) IBOutletCollection(UITextField) NSArray *accountTextField;
-@property (strong, nonatomic) IBOutletCollection(UITextField) NSArray *passwordTextField;
+
+@property (weak, nonatomic) IBOutlet UITextField *accountTF;
+@property (weak, nonatomic) IBOutlet UITextField *pswTF;
+@property (nonatomic,strong) NSString *content;
 
 @end
 
@@ -19,16 +21,24 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    self.content = @"123";
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self.KVOController observe:self keyPath:@"content" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld block:^(id  _Nullable observer, id  _Nonnull object, NSDictionary<NSString *,id> * _Nonnull change) {
+        NSLog(@"%@",change);
+    }];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 - (IBAction)buttonClick:(UIButton *)sender {
-    
+    self.content = @"23";
 }
 
 

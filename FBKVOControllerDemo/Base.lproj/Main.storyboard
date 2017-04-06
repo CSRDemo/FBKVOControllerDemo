@@ -48,8 +48,8 @@
                         <color key="backgroundColor" red="1" green="0.6834459174373102" blue="0.6383613500261931" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
-                        <outletCollection property="accountTextField" destination="Er2-jC-9uO" id="ebe-sN-4Kz"/>
-                        <outletCollection property="passwordTextField" destination="pwv-km-0fq" id="PF0-Kq-0mz"/>
+                        <outlet property="accountTF" destination="Er2-jC-9uO" id="HvT-hH-jgp"/>
+                        <outlet property="pswTF" destination="pwv-km-0fq" id="Eog-m0-smq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
